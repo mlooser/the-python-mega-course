@@ -10,8 +10,11 @@ while True:
             todo = input("What to add? ")
             todos.append(todo)
         case 'show':
-            for item in todos:
-                print(item)
+            for index, item in enumerate(todos):
+                print(index, "-", item)
+        case 'edit':
+            index = int(input("Number of item to edit? "))
+            todos[index]=input("New value: ")
         case 'exit':
             break
 
