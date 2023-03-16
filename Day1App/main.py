@@ -1,13 +1,12 @@
 def storetodos(todos):
     lines = [item + "\n" for item in todos]
-    file = open(r"data/todo.txt","w")
-    file.writelines(lines)
-    file.close()
+    with open(r"data/todo.txt","w") as file:
+        file.writelines(lines)
+
 
 def readtodos():
-    file = open(r"data/todo.txt", "r")
-    load_items = file.readlines()
-    file.close()
+    with open(r"data/todo.txt", "r") as file:
+        load_items = file.readlines()
     return [item.strip("\n") for item in load_items]
 
 todos = readtodos()
